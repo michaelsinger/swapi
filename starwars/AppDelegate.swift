@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  starwars
 //
-//  Created by synesthesia on 7/6/19.
-//  Copyright © 2019 anonymous. All rights reserved.
+//  Created by Michael Singer on 7/6/19.
+//  Copyright © 2019 Michael Singer. All rights reserved.
 //
 
 import UIKit
