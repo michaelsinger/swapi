@@ -2,7 +2,7 @@
 //  NetworkUtility.swift
 //  starwars
 //
-//  Created by Michael Singer on 7/6/19.
+//  Created by Michael Singer on 7/8/19.
 //
 
 import Foundation
@@ -173,11 +173,4 @@ class APIHandler {
             print("species = \(species)")
         }
     }
-    
-//    func loadPlanets(completion -> Void) {
-//         let planets = self.load(path: "/planets/", Planet.self, completion: { (planets) in
-//            return planets
-//        })
-//        return nil
-//    }
 }

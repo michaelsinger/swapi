@@ -2,8 +2,7 @@
 //  AppDelegate.swift
 //  starwars
 //
-//  Created by Michael Singer on 7/6/19.
-//  Copyright © 2019 Michael Singer. All rights reserved.
+//  Created by Michael Singer on 7/8/19.
 //
 
 import UIKit

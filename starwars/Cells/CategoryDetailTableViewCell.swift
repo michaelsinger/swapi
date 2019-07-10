@@ -1,16 +1,17 @@
 //
-//  RootTableViewCell.swift
+//  CategoryDetailTableViewCell.swift
 //  starwars
 //
-//  Created by Michael Singer on 7/8/19.
+//  Created by Michael Singer on 7/10/19.
 //
 
 import UIKit
 
-class RootTableViewCell: UITableViewCell {
+class CategoryDetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imageV: UIImageView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var labelTop: UILabel!
+    @IBOutlet weak var labelBottom: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

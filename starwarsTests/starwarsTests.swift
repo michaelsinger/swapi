@@ -2,8 +2,7 @@
 //  starwarsTests.swift
 //  starwarsTests
 //
-//  Created by synesthesia on 7/6/19.
-//  Copyright © 2019 anonymous. All rights reserved.
+//  Created by Michael Singer on 7/8/19.
 //
 
 import XCTest
