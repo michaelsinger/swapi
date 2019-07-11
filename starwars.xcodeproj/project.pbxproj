@@ -166,9 +166,9 @@
 		909AFE3A22D6986F00B1730D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				25182C9C22D1078F00DA6C87 /* ViewController.swift */,
 				255B2ADB22D244BE00B79ECB /* CategoryDetailTableViewController.swift */,
 				90893CEF22D509F000680928 /* CategoryDetailViewController.swift */,
-				25182C9C22D1078F00DA6C87 /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

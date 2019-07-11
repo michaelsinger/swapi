@@ -18,8 +18,8 @@ class CategoryDetailViewController: UIViewController,DetailDelegate  {
     var item:Decodable?
     var title1 = ""
     var sub = ""
-    var cellKey = ""
-    var cellValue = ""
+    var properties:[String]!
+    var values:[Any]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,39 +31,39 @@ class CategoryDetailViewController: UIViewController,DetailDelegate  {
         case .people:
             title1 = (self.item as! People).name
             sub = (self.item as! People).birth_year
-            cellKey = "Eye Color"
-            cellValue = (self.item as! People).eye_color
+            properties = (self.item as! People).propertyNames()
+            values = (self.item as! People).propertyValues()
         case .planet:
             title1 = (self.item as! Planet).name
             sub = (self.item as! Planet).diameter
-            cellKey = "Rotation Period"
-            cellValue = (self.item as! Planet).rotation_period
+            properties = (self.item as! Planet).propertyNames()
+            values = (self.item as! Planet).propertyValues()
         case .starship:
             title1 = (self.item as! Starship).name
             sub = (self.item as! Starship).model
-            cellKey = "Manufacturer"
-            cellValue = (self.item as! Starship).manufacturer
+            properties = (self.item as! Starship).propertyNames()
+            values = (self.item as! Starship).propertyValues()
         case .species:
             title1 = (self.item as! Species).name
             sub = (self.item as! Species).classification
-            cellKey = "Designation"
-            cellValue = (self.item as! Species).designation
+            properties = (self.item as! Species).propertyNames()
+            values = (self.item as! Species).propertyValues()
         case .vehicle:
             title1 = (self.item as! Vehicle).name
             sub = (self.item as! Vehicle).model
-            cellKey = "Vehicle Class"
-            cellValue = (self.item as! Vehicle).vehicle_class
+            properties = (self.item as! Vehicle).propertyNames()
+            values = (self.item as! Vehicle).propertyValues()
         case .film:
             title1 = (self.item as! Film).title
             sub = (self.item as! Film).opening_crawl
-            cellKey = "Episode Id"
-            cellValue = String((self.item as! Film).episode_id)
+            properties = (self.item as! Film).propertyNames()
+            values = (self.item as! Film).propertyValues()
         }
         self.title = title1
         self.circleLabel.text = title1.initials()
         self.subLabel.text = sub
-        
     }
+    
     func passToDetail(item: Decodable, type: ObjectClass) {
         self.type = type
         self.item = item
@@ -72,15 +72,17 @@ class CategoryDetailViewController: UIViewController,DetailDelegate  {
 
 extension CategoryDetailViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return properties.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryDetailTableViewCell
-        cell.labelTop.text = cellKey
-        cell.labelBottom.text = cellValue.firstUppercased
+        cell.labelTop.text = properties[indexPath.row].formatted()
+        let str = "\(values[indexPath.row])"
+        cell.labelBottom.text = str.firstUppercased
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
@@ -93,7 +95,7 @@ extension CategoryDetailViewController:UITableViewDelegate, UITableViewDataSourc
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 1
     }
 }
 

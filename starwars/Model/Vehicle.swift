@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Vehicle:Decodable {
+struct Vehicle:Decodable, PropertyNames {
     let name:String
     let model:String
     let vehicle_class:String

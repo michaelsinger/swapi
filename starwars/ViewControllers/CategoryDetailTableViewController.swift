@@ -12,7 +12,6 @@ class CategoryDetailTableViewController: UITableViewController, LoadObjectDelega
     var type:ObjectClass!
     weak var delegate:DetailDelegate?
     var activityIndicator = UIActivityIndicatorView()
-//    var model:Decodable.Type = People.self
     var model:NSObject.Type? = nil
     
     override func viewDidLoad() {

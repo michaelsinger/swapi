@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Starship:Decodable {
+struct Starship:Decodable, PropertyNames {
     let name:String
     let model:String
     let starship_class:String

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Film:Decodable {
+struct Film:Decodable, PropertyNames {
     let title:String
     let episode_id:Int
     let opening_crawl:String

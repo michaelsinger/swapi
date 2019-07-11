@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Planet: Decodable {
+struct Planet: Decodable, PropertyNames {
     let name:String
     let diameter:String
     let rotation_period:String

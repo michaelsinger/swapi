@@ -20,6 +20,12 @@ extension String {
         let arr = daymonth.components(separatedBy: "-")
         return arr[1] + "/" + arr[0] + "/" + year
     }
+    
+    func formatted() -> String {
+        let str = self.replacingOccurrences(of: "_", with: " ")
+        return str.capitalized
+    }
+    
 }
 
 extension StringProtocol {
@@ -42,4 +48,17 @@ enum ObjectClass: String {
     case vehicle = "Vehicle"
     case planet = "Planet"
     case film = "Film"
+}
+
+protocol PropertyNames {
+    func propertyNames() -> [String]
+}
+
+extension PropertyNames {
+    func propertyNames() -> [String] {
+        return Mirror(reflecting: self).children.compactMap { $0.label }
+    }
+    func propertyValues() -> [Any] {
+        return Mirror(reflecting: self).children.compactMap { $0.value }
+    }
 }

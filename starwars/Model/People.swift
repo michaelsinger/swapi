@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct People:Decodable {
+struct People:Decodable, PropertyNames {
     let name:String
     let birth_year:String
     let eye_color:String

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Species:Decodable {
+struct Species:Decodable, PropertyNames {
     let name:String
     let classification:String
     let designation:String
