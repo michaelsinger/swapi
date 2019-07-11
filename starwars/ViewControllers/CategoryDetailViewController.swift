@@ -72,17 +72,16 @@ class CategoryDetailViewController: UIViewController,DetailDelegate  {
 
 extension CategoryDetailViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return properties.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryDetailTableViewCell
-        cell.labelTop.text = properties[indexPath.row].formatted()
-        let str = "\(values[indexPath.row])"
+        cell.labelTop.text = properties[indexPath.section].formatted()
+        let str = "\(values[indexPath.section])"
         cell.labelBottom.text = str.firstUppercased
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
@@ -95,8 +94,6 @@ extension CategoryDetailViewController:UITableViewDelegate, UITableViewDataSourc
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return properties.count
     }
 }
-
-
