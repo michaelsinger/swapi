@@ -137,40 +137,4 @@ class APIHandler {
             }
         }
     }
-    
-    func loadPlanets(){
-        self.load(path: "/planets/", Planet.self) { (planets) in
-            print("planets = \(planets)")
-        }
-    }
-    
-    func loadPeople() {
-        self.load(path: "/people/", People.self) { (people) in
-            print("people = \(people)")
-        }
-    }
-    
-    func loadStarships() {
-        self.load(path: "/starships/", Starship.self) { (starships) in
-            print("starships = \(starships)")
-        }
-    }
-    
-    func loadVehicles() {
-        self.load(path: "/vehicles/", Vehicle.self) { (vehicles) in
-            print("vehicles = \(vehicles)")
-        }
-    }
-    
-    func loadFilm() {
-        self.load(path: "/films/", Film.self) { (films) in
-            print("films = \(films)")
-        }
-    }
-    
-    func loadSpecies() {
-        self.load(path: "/species/", Species.self) { (species) in
-            print("species = \(species)")
-        }
-    }
 }
